@@ -2,7 +2,6 @@ C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\Inbody.exe.config
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\Inbody.exe
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\Inbody.pdb
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.csproj.AssemblyReference.cache
-C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.Form1.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.Properties.Resources.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.UC_Analysis.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.UC_Info.resources
@@ -14,3 +13,7 @@ C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.csproj.Generat
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.csproj.CoreCompileInputs.cache
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.exe
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.pdb
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.InbodyMain.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_AnalysisWeight.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_MemberNumber.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_CheckPersonalInfo.resources

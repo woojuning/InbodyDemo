@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace Inbody
 {
-    public partial class Form1 : Form
+    public partial class InbodyMain : Form
     {
         #region UserControl 선언
         private UC_OverView _ucOverview;
@@ -28,7 +28,7 @@ namespace Inbody
         private Point offset;
         private List<RadioButton> _userControlButtons;
         
-        public Form1()
+        public InbodyMain()
         {
             InitializeComponent();
             _isMenuExpanded = true;
@@ -235,7 +235,7 @@ namespace Inbody
                 case "Settings":
                     _ucSettings.BringToFront();
                     break;
-                case "Info":
+                case "About Us":
                     _ucInfo.BringToFront();
                     break;
                 case "Folder":
