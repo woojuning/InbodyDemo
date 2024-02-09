@@ -47,7 +47,7 @@
             this.label8 = new System.Windows.Forms.Label();
             this.rdo_male = new System.Windows.Forms.RadioButton();
             this.rdo_female = new System.Windows.Forms.RadioButton();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_okay = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -264,25 +264,26 @@
             this.rdo_female.CheckedChanged += new System.EventHandler(this.CheckedChangeGenderRadioButton);
             this.rdo_female.Click += new System.EventHandler(this.SelectGenderRadioButton);
             // 
-            // button1
+            // btn_okay
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(155)))), ((int)(((byte)(220)))));
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Pretendard Medium", 14.25F, System.Drawing.FontStyle.Bold);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(275, 574);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(340, 45);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "확인";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btn_okay.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(133)))), ((int)(((byte)(155)))), ((int)(((byte)(220)))));
+            this.btn_okay.FlatAppearance.BorderSize = 0;
+            this.btn_okay.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_okay.Font = new System.Drawing.Font("Pretendard Medium", 14.25F, System.Drawing.FontStyle.Bold);
+            this.btn_okay.ForeColor = System.Drawing.Color.White;
+            this.btn_okay.Location = new System.Drawing.Point(275, 574);
+            this.btn_okay.Name = "btn_okay";
+            this.btn_okay.Size = new System.Drawing.Size(340, 45);
+            this.btn_okay.TabIndex = 5;
+            this.btn_okay.Text = "확인";
+            this.btn_okay.UseVisualStyleBackColor = false;
+            this.btn_okay.Click += new System.EventHandler(this.btn_okay_Click);
             // 
             // UC_CheckPersonalInfo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_okay);
             this.Controls.Add(this.rdo_female);
             this.Controls.Add(this.rdo_male);
             this.Controls.Add(this.label8);
@@ -329,6 +330,6 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rdo_male;
         private System.Windows.Forms.RadioButton rdo_female;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_okay;
     }
 }

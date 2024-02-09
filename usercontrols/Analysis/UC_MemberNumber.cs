@@ -41,7 +41,7 @@ namespace Inbody.usercontrols.Analysis
         #region Button
         private void btn_okay_Click(object sender, EventArgs e)
         {
-            OkayButtonClickEvent(sender, e);
+            OkayButtonClickEvent?.Invoke(sender, e);
         }
         #endregion
 

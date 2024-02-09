@@ -17,3 +17,6 @@ C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.InbodyMain.res
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_AnalysisWeight.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_MemberNumber.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_CheckPersonalInfo.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_PersonalInfoConsent.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_PostureFoot.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_PostureHand.resources

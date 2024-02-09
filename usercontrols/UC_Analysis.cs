@@ -17,6 +17,9 @@ namespace Inbody.usercontrols
         UC_AnalysisWeight _ucAnalysisWeight;
         UC_MemberNumber _ucMemberNumber;
         UC_CheckPersonalInfo _ucCheckPersonInfo;
+        UC_PersonalInfoConsent _ucPersonInfoConsent;
+        UC_PostureFoot _ucPostureFoot;
+
         private int _screenIndex;
 
         public UC_Analysis()
@@ -25,6 +28,9 @@ namespace Inbody.usercontrols
             _ucAnalysisWeight = new UC_AnalysisWeight();
             _ucMemberNumber = new UC_MemberNumber();
             _ucCheckPersonInfo = new UC_CheckPersonalInfo();
+            _ucPersonInfoConsent = new UC_PersonalInfoConsent();
+            _ucPostureFoot = new UC_PostureFoot();
+
             _screenIndex = 0;
 
             RegisterUserControlEventHandler();
@@ -65,12 +71,26 @@ namespace Inbody.usercontrols
 
         #region UserControl
         //UC_MemberNumbers
-        private void OkayButtonClickEvent(object sender, EventArgs e)
+        private void OkayButtonClickEvent_MemberNum(object sender, EventArgs e)
         {
             _screenIndex = 3;
             _ucCheckPersonInfo.Visible = true;
             _ucCheckPersonInfo.BringToFront();
         }
+
+        //UC_CheckPersonalInfo
+        private void OkayButtonClickEvent_PersonalInfo(object sender, EventArgs e)
+        {
+            _screenIndex = 4;
+            _ucPersonInfoConsent.Visible = true;
+            _ucPersonInfoConsent.BringToFront();
+        }
+
+        private void YesButtonClickEvent_PersonInfoConsent(object sender, EventArgs e)
+        {
+            
+        }
+        
         #endregion
 
         #endregion
@@ -81,18 +101,27 @@ namespace Inbody.usercontrols
             pn_main.Controls.Add(_ucAnalysisWeight);
             pn_main.Controls.Add(_ucMemberNumber);
             pn_main.Controls.Add(_ucCheckPersonInfo);
+            pn_main.Controls.Add(_ucPersonInfoConsent);
+            pn_main.Controls.Add(_ucPostureFoot);
+
             _ucAnalysisWeight.Dock = DockStyle.Fill;
             _ucMemberNumber.Dock = DockStyle.Fill;
             _ucCheckPersonInfo.Dock = DockStyle.Fill;
+            _ucPersonInfoConsent.Dock = DockStyle.Fill;
+            _ucPostureFoot.Dock = DockStyle.Fill;
 
             _ucAnalysisWeight.Visible = false;
             _ucMemberNumber.Visible = false;
             _ucCheckPersonInfo.Visible = false;
+            _ucPersonInfoConsent.Visible = false;
+            _ucPostureFoot.Visible = false;
         }
 
         private void RegisterUserControlEventHandler()
         {
-            _ucMemberNumber.OkayButtonClickEvent += this.OkayButtonClickEvent;
+            _ucMemberNumber.OkayButtonClickEvent += this.OkayButtonClickEvent_MemberNum;
+            _ucCheckPersonInfo.OkayButtonClickEvent += this.OkayButtonClickEvent_PersonalInfo;
+            _ucPersonInfoConsent.YesButtonClickEvent += this.YesButtonClickEvent_PersonInfoConsent;
         }
 
         #endregion

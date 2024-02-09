@@ -72,6 +72,24 @@
     <Compile Include="usercontrols\Analysis\UC_MemberNumber.Designer.cs">
       <DependentUpon>UC_MemberNumber.cs</DependentUpon>
     </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PersonalInfoConsent.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PersonalInfoConsent.Designer.cs">
+      <DependentUpon>UC_PersonalInfoConsent.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PostureFoot.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PostureFoot.Designer.cs">
+      <DependentUpon>UC_PostureFoot.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PostureHand.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Analysis\UC_PostureHand.Designer.cs">
+      <DependentUpon>UC_PostureHand.cs</DependentUpon>
+    </Compile>
     <Compile Include="usercontrols\UC_Analysis.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -130,6 +148,15 @@
     <EmbeddedResource Include="usercontrols\Analysis\UC_MemberNumber.resx">
       <DependentUpon>UC_MemberNumber.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Analysis\UC_PersonalInfoConsent.resx">
+      <DependentUpon>UC_PersonalInfoConsent.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Analysis\UC_PostureFoot.resx">
+      <DependentUpon>UC_PostureFoot.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Analysis\UC_PostureHand.resx">
+      <DependentUpon>UC_PostureHand.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="usercontrols\UC_Analysis.resx">
       <DependentUpon>UC_Analysis.cs</DependentUpon>
     </EmbeddedResource>
@@ -178,6 +205,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\InbodyNoBackground.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Icon.targetsize-48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\postureFoot-removebg-preview.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

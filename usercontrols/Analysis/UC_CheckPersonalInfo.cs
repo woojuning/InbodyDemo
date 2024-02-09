@@ -13,6 +13,8 @@ namespace Inbody.usercontrols.Analysis
 {
     public partial class UC_CheckPersonalInfo : UserControl
     {
+        public event EventHandler OkayButtonClickEvent;
+
         public UC_CheckPersonalInfo()
         {
             InitializeComponent();
@@ -35,6 +37,7 @@ namespace Inbody.usercontrols.Analysis
 
         }
         #endregion
+
         #region RadioButton
         private void SelectGenderRadioButton(object sender, EventArgs e)
         {
@@ -94,6 +97,14 @@ namespace Inbody.usercontrols.Analysis
                 }
             }
         }
+
+        #endregion
+
+        #region Button
+        private void btn_okay_Click(object sender, EventArgs e)
+        {
+            OkayButtonClickEvent?.Invoke(sender, e);
+        }
         #endregion
 
         #endregion
@@ -102,6 +113,7 @@ namespace Inbody.usercontrols.Analysis
 
         #endregion
 
-  
+
+
     }
 }

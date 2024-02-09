@@ -103,6 +103,16 @@ namespace Inbody.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap Icon_targetsize_48 {
+            get {
+                object obj = ResourceManager.GetObject("Icon.targetsize-48", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap InbodyNoBackground {
             get {
                 object obj = ResourceManager.GetObject("InbodyNoBackground", resourceCulture);
@@ -116,6 +126,66 @@ namespace Inbody.Properties {
         internal static System.Drawing.Bitmap info {
             get {
                 object obj = ResourceManager.GetObject("info", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureArmpit1_removeBack {
+            get {
+                object obj = ResourceManager.GetObject("postureArmpit1_removeBack", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureArmpit1_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("postureArmpit1-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureArmpit2_removebg {
+            get {
+                object obj = ResourceManager.GetObject("postureArmpit2-removebg", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureArmpit2_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("postureArmpit2-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureFoot_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("postureFoot-removebg-preview", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureHand {
+            get {
+                object obj = ResourceManager.GetObject("postureHand", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
