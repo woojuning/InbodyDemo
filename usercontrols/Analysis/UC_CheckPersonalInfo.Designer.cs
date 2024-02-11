@@ -34,15 +34,15 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.tb_memberNum = new System.Windows.Forms.TextBox();
+            this.tb_phoneNum = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.lbl_memberNum = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.chk_equalMemberNum = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.tb_height = new System.Windows.Forms.TextBox();
+            this.tb_age = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.rdo_male = new System.Windows.Forms.RadioButton();
@@ -106,14 +106,14 @@
             this.panel5.Size = new System.Drawing.Size(250, 559);
             this.panel5.TabIndex = 5;
             // 
-            // tb_memberNum
+            // tb_phoneNum
             // 
-            this.tb_memberNum.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.tb_memberNum.Location = new System.Drawing.Point(275, 215);
-            this.tb_memberNum.MaxLength = 14;
-            this.tb_memberNum.Name = "tb_memberNum";
-            this.tb_memberNum.Size = new System.Drawing.Size(340, 47);
-            this.tb_memberNum.TabIndex = 0;
+            this.tb_phoneNum.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_phoneNum.Location = new System.Drawing.Point(275, 215);
+            this.tb_phoneNum.MaxLength = 14;
+            this.tb_phoneNum.Name = "tb_phoneNum";
+            this.tb_phoneNum.Size = new System.Drawing.Size(340, 47);
+            this.tb_phoneNum.TabIndex = 0;
             // 
             // label1
             // 
@@ -186,23 +186,23 @@
             this.label6.TabIndex = 15;
             this.label6.Text = "신장 (cm)";
             // 
-            // textBox1
+            // tb_height
             // 
-            this.textBox1.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox1.Location = new System.Drawing.Point(275, 341);
-            this.textBox1.MaxLength = 14;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 47);
-            this.textBox1.TabIndex = 1;
+            this.tb_height.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_height.Location = new System.Drawing.Point(275, 341);
+            this.tb_height.MaxLength = 6;
+            this.tb_height.Name = "tb_height";
+            this.tb_height.Size = new System.Drawing.Size(340, 47);
+            this.tb_height.TabIndex = 1;
             // 
-            // textBox2
+            // tb_age
             // 
-            this.textBox2.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.textBox2.Location = new System.Drawing.Point(275, 429);
-            this.textBox2.MaxLength = 14;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(340, 47);
-            this.textBox2.TabIndex = 2;
+            this.tb_age.Font = new System.Drawing.Font("Pretendard Medium", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.tb_age.Location = new System.Drawing.Point(275, 429);
+            this.tb_age.MaxLength = 3;
+            this.tb_age.Name = "tb_age";
+            this.tb_age.Size = new System.Drawing.Size(340, 47);
+            this.tb_age.TabIndex = 2;
             // 
             // label7
             // 
@@ -288,20 +288,21 @@
             this.Controls.Add(this.rdo_male);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.textBox2);
+            this.Controls.Add(this.tb_age);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.tb_height);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.chk_equalMemberNum);
             this.Controls.Add(this.lbl_memberNum);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.tb_memberNum);
+            this.Controls.Add(this.tb_phoneNum);
             this.Controls.Add(this.panel5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Name = "UC_CheckPersonalInfo";
             this.Size = new System.Drawing.Size(888, 629);
+            this.Load += new System.EventHandler(this.UC_CheckPersonalInfo_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.ResumeLayout(false);
@@ -316,7 +317,7 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Panel panel5;
-        private System.Windows.Forms.TextBox tb_memberNum;
+        private System.Windows.Forms.TextBox tb_phoneNum;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label lbl_memberNum;
@@ -324,8 +325,8 @@
         private System.Windows.Forms.CheckBox chk_equalMemberNum;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox tb_height;
+        private System.Windows.Forms.TextBox tb_age;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.RadioButton rdo_male;

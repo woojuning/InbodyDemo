@@ -56,9 +56,9 @@
             this.label1.Font = new System.Drawing.Font("Pretendard", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
             this.label1.Location = new System.Drawing.Point(321, 88);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(178, 44);
+            this.label1.Size = new System.Drawing.Size(252, 44);
             this.label1.TabIndex = 0;
-            this.label1.Text = "overview";
+            this.label1.Text = "로그인해라 ㅋㅋ";
             // 
             // panel2
             // 

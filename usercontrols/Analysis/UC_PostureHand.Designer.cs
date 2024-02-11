@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
@@ -38,7 +39,6 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
@@ -58,6 +58,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(888, 180);
             this.panel1.TabIndex = 13;
+            // 
+            // label4
+            // 
+            this.label4.Font = new System.Drawing.Font("Pretendard Medium", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
+            this.label4.Location = new System.Drawing.Point(259, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(378, 43);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "엄지를 동그란 전극에 대세요.";
             // 
             // panel3
             // 
@@ -120,7 +130,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Inbody.Properties.Resources.postureHand;
+            this.pictureBox1.Image = global::Inbody.Properties.Resources.postureHand_removebg_preview;
             this.pictureBox1.Location = new System.Drawing.Point(291, 233);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(315, 345);
@@ -143,16 +153,6 @@
             this.panel5.Name = "panel5";
             this.panel5.Size = new System.Drawing.Size(250, 449);
             this.panel5.TabIndex = 18;
-            // 
-            // label4
-            // 
-            this.label4.Font = new System.Drawing.Font("Pretendard Medium", 22F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(254)))));
-            this.label4.Location = new System.Drawing.Point(259, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(378, 43);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "엄지를 동그란 전극에 대세요.";
             // 
             // UC_PostureHand
             // 

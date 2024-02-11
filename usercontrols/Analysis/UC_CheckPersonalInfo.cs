@@ -13,14 +13,24 @@ namespace Inbody.usercontrols.Analysis
 {
     public partial class UC_CheckPersonalInfo : UserControl
     {
-        public event EventHandler OkayButtonClickEvent;
+        public event EventHandler<EventUserInfoArgs> OkayButtonClickEvent;
+        
 
-        public UC_CheckPersonalInfo()
+        private string _memberNum;
+
+        public UC_CheckPersonalInfo(string memberNum)
         {
             InitializeComponent();
+            this._memberNum = memberNum;
         }
 
         #region EventHandler
+        #region Load
+        private void UC_CheckPersonalInfo_Load(object sender, EventArgs e)
+        {
+            lbl_memberNum.Text = _memberNum;
+        }
+        #endregion
         #region CheckBox
         private void chk_equalMemberNum_CheckedChanged(object sender, EventArgs e)
         {
@@ -28,11 +38,11 @@ namespace Inbody.usercontrols.Analysis
 
             if (chk.Checked)
             {
-                tb_memberNum.Text = lbl_memberNum.Text;
+                tb_phoneNum.Text = lbl_memberNum.Text;
             }
             else
             {
-                tb_memberNum.Text = "";
+                tb_phoneNum.Text = "";
             }
 
         }
@@ -103,8 +113,18 @@ namespace Inbody.usercontrols.Analysis
         #region Button
         private void btn_okay_Click(object sender, EventArgs e)
         {
-            OkayButtonClickEvent?.Invoke(sender, e);
+            EventUserInfoArgs args = new EventUserInfoArgs(
+                membernum: lbl_memberNum.Text,
+                phonenum: tb_phoneNum.Text,
+                height: double.Parse(tb_height.Text),
+                age: int.Parse(tb_age.Text),
+                gender: rdo_male.Checked ? false : true
+                );
+
+            OkayButtonClickEvent?.Invoke(sender, args);
         }
+
+
         #endregion
 
         #endregion
@@ -113,7 +133,24 @@ namespace Inbody.usercontrols.Analysis
 
         #endregion
 
+    
+    }
 
+    public class EventUserInfoArgs : EventArgs
+    {
+        public string MemberNum { get; set; }
+        public string PhoneNum { get; set; }
+        public double Height { get; set; }
+        public int Age { get; set; }
+        public bool Gender { get; set; }
 
+        public EventUserInfoArgs(string membernum, string phonenum, double height, int age, bool gender)
+        {
+            this.MemberNum = membernum;
+            this.PhoneNum = phonenum;
+            this.Height = height;
+            this.Age = age;
+            this.Gender = gender;
+        }
     }
 }

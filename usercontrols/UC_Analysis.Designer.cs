@@ -28,15 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(UC_Analysis));
             this.pn_bottom = new System.Windows.Forms.Panel();
             this.btn_next = new System.Windows.Forms.Button();
             this.btn_managerMenu = new System.Windows.Forms.Button();
             this.pn_main = new System.Windows.Forms.Panel();
+            this.pn_top = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pn_top = new System.Windows.Forms.Panel();
+            this.timer_posture = new System.Windows.Forms.Timer(this.components);
             this.pn_bottom.SuspendLayout();
             this.pn_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -52,6 +54,7 @@
             this.pn_bottom.Name = "pn_bottom";
             this.pn_bottom.Size = new System.Drawing.Size(888, 54);
             this.pn_bottom.TabIndex = 1;
+            this.pn_bottom.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_bottom_Paint);
             // 
             // btn_next
             // 
@@ -92,6 +95,15 @@
             this.pn_main.Name = "pn_main";
             this.pn_main.Size = new System.Drawing.Size(888, 629);
             this.pn_main.TabIndex = 2;
+            this.pn_main.Paint += new System.Windows.Forms.PaintEventHandler(this.pn_main_Paint);
+            // 
+            // pn_top
+            // 
+            this.pn_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
+            this.pn_top.Location = new System.Drawing.Point(0, 0);
+            this.pn_top.Name = "pn_top";
+            this.pn_top.Size = new System.Drawing.Size(888, 46);
+            this.pn_top.TabIndex = 8;
             // 
             // label2
             // 
@@ -124,13 +136,10 @@
             this.pictureBox1.TabIndex = 4;
             this.pictureBox1.TabStop = false;
             // 
-            // pn_top
+            // timer_posture
             // 
-            this.pn_top.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(43)))), ((int)(((byte)(47)))), ((int)(((byte)(52)))));
-            this.pn_top.Location = new System.Drawing.Point(0, 0);
-            this.pn_top.Name = "pn_top";
-            this.pn_top.Size = new System.Drawing.Size(888, 46);
-            this.pn_top.TabIndex = 8;
+            this.timer_posture.Interval = 700;
+            this.timer_posture.Tick += new System.EventHandler(this.timer_posture_Tick);
             // 
             // UC_Analysis
             // 
@@ -158,5 +167,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pn_top;
+        private System.Windows.Forms.Timer timer_posture;
     }
 }

@@ -12,7 +12,8 @@ namespace Inbody.usercontrols.Analysis
 {
     public partial class UC_MemberNumber : UserControl
     {
-        public event EventHandler OkayButtonClickEvent;
+        public delegate void EventDataHanlder(object sender, EventDataArgs e);
+        public event EventDataHanlder OkayButtonClickEvent;
 
         public UC_MemberNumber()
         {
@@ -41,7 +42,7 @@ namespace Inbody.usercontrols.Analysis
         #region Button
         private void btn_okay_Click(object sender, EventArgs e)
         {
-            OkayButtonClickEvent?.Invoke(sender, e);
+            OkayButtonClickEvent?.Invoke(sender, new EventDataArgs(tb_memberNum.Text));
         }
         #endregion
 
@@ -55,7 +56,15 @@ namespace Inbody.usercontrols.Analysis
         }
 
         #endregion
+    }
 
-        
+    public class EventDataArgs : EventArgs
+    {
+        public string MemberNum { get; set; }
+
+        public EventDataArgs(string memberNum)
+        {
+            this.MemberNum = memberNum;
+        }
     }
 }

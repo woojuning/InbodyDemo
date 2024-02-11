@@ -32,40 +32,40 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(InbodyMain));
             this.timer_menu = new System.Windows.Forms.Timer(this.components);
             this.pn_titlebar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btn_close = new System.Windows.Forms.Button();
             this.panel8 = new System.Windows.Forms.Panel();
             this.lbl_time = new System.Windows.Forms.Label();
             this.fpn_menu = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.pic_menu = new System.Windows.Forms.PictureBox();
             this.panel5 = new System.Windows.Forms.Panel();
-            this.rdo_home = new System.Windows.Forms.RadioButton();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.rdo_analysis = new System.Windows.Forms.RadioButton();
             this.panel7 = new System.Windows.Forms.Panel();
-            this.rdo_settings = new System.Windows.Forms.RadioButton();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.rdo_info = new System.Windows.Forms.RadioButton();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.rdo_folder = new System.Windows.Forms.RadioButton();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.rdo_progress = new System.Windows.Forms.RadioButton();
             this.pn_main = new System.Windows.Forms.Panel();
             this.timer_time = new System.Windows.Forms.Timer(this.components);
+            this.pic_menu = new System.Windows.Forms.PictureBox();
+            this.rdo_home = new System.Windows.Forms.RadioButton();
+            this.rdo_analysis = new System.Windows.Forms.RadioButton();
+            this.rdo_settings = new System.Windows.Forms.RadioButton();
+            this.rdo_info = new System.Windows.Forms.RadioButton();
+            this.rdo_folder = new System.Windows.Forms.RadioButton();
+            this.rdo_progress = new System.Windows.Forms.RadioButton();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btn_close = new System.Windows.Forms.Button();
             this.pn_titlebar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel8.SuspendLayout();
             this.fpn_menu.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_menu)).BeginInit();
             this.panel5.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel7.SuspendLayout();
             this.panel4.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel6.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pic_menu)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // timer_menu
@@ -86,31 +86,6 @@
             this.pn_titlebar.MouseDown += new System.Windows.Forms.MouseEventHandler(this.pn_titlebar_MouseDown);
             this.pn_titlebar.MouseMove += new System.Windows.Forms.MouseEventHandler(this.pn_titlebar_MouseMove);
             this.pn_titlebar.MouseUp += new System.Windows.Forms.MouseEventHandler(this.pn_titlebar_MouseUp);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::Inbody.Properties.Resources.InbodyNoBackground;
-            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(83, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox1.TabIndex = 1;
-            this.pictureBox1.TabStop = false;
-            // 
-            // btn_close
-            // 
-            this.btn_close.BackColor = System.Drawing.Color.Transparent;
-            this.btn_close.FlatAppearance.BorderSize = 0;
-            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
-            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
-            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
-            this.btn_close.Location = new System.Drawing.Point(1039, 3);
-            this.btn_close.Name = "btn_close";
-            this.btn_close.Size = new System.Drawing.Size(46, 37);
-            this.btn_close.TabIndex = 0;
-            this.btn_close.UseVisualStyleBackColor = false;
-            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // panel8
             // 
@@ -171,6 +146,70 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "MENU";
             // 
+            // panel5
+            // 
+            this.panel5.Controls.Add(this.rdo_home);
+            this.panel5.Location = new System.Drawing.Point(3, 90);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(197, 85);
+            this.panel5.TabIndex = 2;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.rdo_analysis);
+            this.panel3.Location = new System.Drawing.Point(3, 181);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(197, 85);
+            this.panel3.TabIndex = 2;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.rdo_settings);
+            this.panel7.Location = new System.Drawing.Point(3, 272);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(197, 85);
+            this.panel7.TabIndex = 3;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.rdo_info);
+            this.panel4.Location = new System.Drawing.Point(3, 363);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(197, 85);
+            this.panel4.TabIndex = 3;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.rdo_folder);
+            this.panel2.Location = new System.Drawing.Point(3, 454);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(197, 85);
+            this.panel2.TabIndex = 1;
+            this.panel2.Visible = false;
+            // 
+            // panel6
+            // 
+            this.panel6.Controls.Add(this.rdo_progress);
+            this.panel6.Location = new System.Drawing.Point(3, 545);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(197, 85);
+            this.panel6.TabIndex = 4;
+            this.panel6.Visible = false;
+            // 
+            // pn_main
+            // 
+            this.pn_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.pn_main.Location = new System.Drawing.Point(200, 42);
+            this.pn_main.Name = "pn_main";
+            this.pn_main.Size = new System.Drawing.Size(888, 683);
+            this.pn_main.TabIndex = 9;
+            // 
+            // timer_time
+            // 
+            this.timer_time.Interval = 1000;
+            this.timer_time.Tick += new System.EventHandler(this.timer_time_Tick);
+            // 
             // pic_menu
             // 
             this.pic_menu.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -182,14 +221,6 @@
             this.pic_menu.TabIndex = 0;
             this.pic_menu.TabStop = false;
             this.pic_menu.Click += new System.EventHandler(this.pic_menu_Click);
-            // 
-            // panel5
-            // 
-            this.panel5.Controls.Add(this.rdo_home);
-            this.panel5.Location = new System.Drawing.Point(3, 90);
-            this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(197, 85);
-            this.panel5.TabIndex = 2;
             // 
             // rdo_home
             // 
@@ -213,14 +244,6 @@
             this.rdo_home.UseVisualStyleBackColor = true;
             this.rdo_home.Click += new System.EventHandler(this.UserControlButton_Click);
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.rdo_analysis);
-            this.panel3.Location = new System.Drawing.Point(3, 181);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(197, 85);
-            this.panel3.TabIndex = 2;
-            // 
             // rdo_analysis
             // 
             this.rdo_analysis.Appearance = System.Windows.Forms.Appearance.Button;
@@ -240,14 +263,6 @@
             this.rdo_analysis.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdo_analysis.UseVisualStyleBackColor = true;
             this.rdo_analysis.Click += new System.EventHandler(this.UserControlButton_Click);
-            // 
-            // panel7
-            // 
-            this.panel7.Controls.Add(this.rdo_settings);
-            this.panel7.Location = new System.Drawing.Point(3, 272);
-            this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(197, 85);
-            this.panel7.TabIndex = 3;
             // 
             // rdo_settings
             // 
@@ -269,14 +284,6 @@
             this.rdo_settings.UseVisualStyleBackColor = true;
             this.rdo_settings.Click += new System.EventHandler(this.UserControlButton_Click);
             // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.rdo_info);
-            this.panel4.Location = new System.Drawing.Point(3, 363);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(197, 85);
-            this.panel4.TabIndex = 3;
-            // 
             // rdo_info
             // 
             this.rdo_info.Appearance = System.Windows.Forms.Appearance.Button;
@@ -296,15 +303,6 @@
             this.rdo_info.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rdo_info.UseVisualStyleBackColor = true;
             this.rdo_info.Click += new System.EventHandler(this.UserControlButton_Click);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.rdo_folder);
-            this.panel2.Location = new System.Drawing.Point(3, 454);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(197, 85);
-            this.panel2.TabIndex = 1;
-            this.panel2.Visible = false;
             // 
             // rdo_folder
             // 
@@ -326,15 +324,6 @@
             this.rdo_folder.UseVisualStyleBackColor = true;
             this.rdo_folder.Click += new System.EventHandler(this.UserControlButton_Click);
             // 
-            // panel6
-            // 
-            this.panel6.Controls.Add(this.rdo_progress);
-            this.panel6.Location = new System.Drawing.Point(3, 545);
-            this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(197, 85);
-            this.panel6.TabIndex = 4;
-            this.panel6.Visible = false;
-            // 
             // rdo_progress
             // 
             this.rdo_progress.Appearance = System.Windows.Forms.Appearance.Button;
@@ -355,19 +344,30 @@
             this.rdo_progress.UseVisualStyleBackColor = true;
             this.rdo_progress.Click += new System.EventHandler(this.UserControlButton_Click);
             // 
-            // pn_main
+            // pictureBox1
             // 
-            this.pn_main.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_main.Location = new System.Drawing.Point(200, 42);
-            this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(888, 683);
-            this.pn_main.TabIndex = 9;
+            this.pictureBox1.Image = global::Inbody.Properties.Resources.InbodyNoBackground;
+            this.pictureBox1.Location = new System.Drawing.Point(9, 5);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(83, 32);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 1;
+            this.pictureBox1.TabStop = false;
             // 
-            // timer_time
+            // btn_close
             // 
-            this.timer_time.Interval = 1000;
-            this.timer_time.Tick += new System.EventHandler(this.timer_time_Tick);
+            this.btn_close.BackColor = System.Drawing.Color.Transparent;
+            this.btn_close.FlatAppearance.BorderSize = 0;
+            this.btn_close.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.btn_close.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(205)))), ((int)(((byte)(210)))));
+            this.btn_close.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_close.Image = ((System.Drawing.Image)(resources.GetObject("btn_close.Image")));
+            this.btn_close.Location = new System.Drawing.Point(1039, 3);
+            this.btn_close.Name = "btn_close";
+            this.btn_close.Size = new System.Drawing.Size(46, 37);
+            this.btn_close.TabIndex = 0;
+            this.btn_close.UseVisualStyleBackColor = false;
+            this.btn_close.Click += new System.EventHandler(this.btn_close_Click);
             // 
             // InbodyMain
             // 
@@ -384,19 +384,19 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.pn_titlebar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel8.ResumeLayout(false);
             this.panel8.PerformLayout();
             this.fpn_menu.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pic_menu)).EndInit();
             this.panel5.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel7.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pic_menu)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }

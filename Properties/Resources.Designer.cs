@@ -133,6 +133,16 @@ namespace Inbody.Properties {
         /// <summary>
         ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
         /// </summary>
+        internal static System.Drawing.Bitmap loading {
+            get {
+                object obj = ResourceManager.GetObject("loading", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
         internal static System.Drawing.Bitmap postureArmpit1_removeBack {
             get {
                 object obj = ResourceManager.GetObject("postureArmpit1_removeBack", resourceCulture);
@@ -186,6 +196,16 @@ namespace Inbody.Properties {
         internal static System.Drawing.Bitmap postureHand {
             get {
                 object obj = ResourceManager.GetObject("postureHand", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   System.Drawing.Bitmap 형식의 지역화된 리소스를 찾습니다.
+        /// </summary>
+        internal static System.Drawing.Bitmap postureHand_removebg_preview {
+            get {
+                object obj = ResourceManager.GetObject("postureHand-removebg-preview", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

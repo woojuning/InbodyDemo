@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -36,9 +37,10 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
+            this.lbl_weight = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.timer_weight = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -129,16 +131,16 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "1";
             // 
-            // label6
+            // lbl_weight
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Pretendard ExtraBold", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(56)))));
-            this.label6.Location = new System.Drawing.Point(352, 347);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(181, 80);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "26.0";
+            this.lbl_weight.AutoSize = true;
+            this.lbl_weight.Font = new System.Drawing.Font("Pretendard ExtraBold", 50F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_weight.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(43)))), ((int)(((byte)(56)))));
+            this.lbl_weight.Location = new System.Drawing.Point(352, 347);
+            this.lbl_weight.Name = "lbl_weight";
+            this.lbl_weight.Size = new System.Drawing.Size(181, 80);
+            this.lbl_weight.TabIndex = 8;
+            this.lbl_weight.Text = "26.0";
             // 
             // label7
             // 
@@ -162,6 +164,11 @@
             this.label8.TabIndex = 8;
             this.label8.Text = "체중";
             // 
+            // timer_weight
+            // 
+            this.timer_weight.Interval = 3000;
+            this.timer_weight.Tick += new System.EventHandler(this.timer_weight_Tick);
+            // 
             // UC_AnalysisWeight
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -169,7 +176,7 @@
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(216)))), ((int)(((byte)(224)))), ((int)(((byte)(223)))));
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
+            this.Controls.Add(this.lbl_weight);
             this.Controls.Add(this.panel1);
             this.Name = "UC_AnalysisWeight";
             this.Size = new System.Drawing.Size(888, 629);
@@ -190,8 +197,9 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label lbl_weight;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Timer timer_weight;
     }
 }

@@ -47,6 +47,7 @@ namespace Inbody
         #region Load
         private void Form1_Load(object sender, EventArgs e)
         {
+            rdo_home.ForeColor = Color.White;
             lbl_time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
             timer_time.Start();
         }
@@ -97,6 +98,7 @@ namespace Inbody
         {
             UserControlButtonCheckedChange(sender); //메뉴 선택 시, 하나만 체크가 되고 나머지는 모두 checked false 되도록 하는 함수
             UserControlButton_Click(sender);  // 클릭한 버튼에 해당하는 usercontrol을 panel의 z축 최상단으로 불러주는 함수
+            ChangeForeColor(sender);
         }
 
         
@@ -167,6 +169,7 @@ namespace Inbody
         {
             lbl_time.Text = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss");
         }
+
 
         #endregion
 
@@ -248,13 +251,27 @@ namespace Inbody
                 default: break;
             }
         }
-        #endregion
+
+        //선택한 라디오버튼만 글자색을 흰색으로 변경
+        private void ChangeForeColor(object sender)
+        {
+            var currentRdo = sender as RadioButton;
+
+            foreach (var rdo in _userControlButtons)
+            {
+                rdo.ForeColor = Color.Black;
+            }
+
+            currentRdo.ForeColor = Color.White;
+        }
 
 
 
 
         #endregion
 
+        #endregion
 
+   
     }
 }
