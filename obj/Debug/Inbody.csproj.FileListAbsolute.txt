@@ -23,3 +23,5 @@ C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.A
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_PostureArmpit1.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_PostureArmpit2.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Analysis.UC_InbodyTest.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.csproj.CopyComplete
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Overview.UC_EntryImage.resources

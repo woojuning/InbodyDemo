@@ -167,6 +167,9 @@ namespace Inbody.usercontrols
                     ShowUserControl(_ucInbodyTest);
                     
                     timer_posture.Stop();
+
+                    //weight timer test임.
+                    _ucInbodyTest.InbodyTestStart();
                     break;
                 default:
                     break;

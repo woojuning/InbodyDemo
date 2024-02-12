@@ -1,4 +1,8 @@
-﻿using Inbody.Utils;
+﻿using Connect;
+using Dapper;
+using Inbody.Models;
+using Inbody.Repository;
+using Inbody.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -21,15 +25,62 @@ namespace Inbody.usercontrols
 
         private void button1_Click(object sender, EventArgs e)
         {
-            var str = TCPIP_Client.GetDataFromServer("total");
+            UserAnalysisRepo repo = new UserAnalysisRepo();
 
-            Console.WriteLine(str);
+            var user = new UserInfoModel()
+            {
+                MemberNum = "111",
+                PhoneNum = "01089051985",
+                Height = 164,
+                Age = 29,
+                Gender = false
+            };
+
+            var analysis = new UserAnalysisModel()
+            {
+                MemberNum = user.MemberNum,
+                Weight = 92,
+                SkeletalMuscleMass = 42,
+                BodyFatMass = 25,
+                MeasureTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            };
+
+            repo.Insert(analysis);
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            var str = TCPIP_Client.GetDataFromServer("weight");
-            Console.WriteLine(str);
+            UserInfoRepo repo = new UserInfoRepo();
+            var user = new UserInfoModel()
+            {
+                MemberNum = "123",
+                PhoneNum = "01091471986",
+                Height = 192,
+                Age = 30,
+                Gender = false
+            };
+
+            repo.Update(user);
+            
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            UserInfoRepo repo = new UserInfoRepo();
+            var user = new UserInfoModel()
+            {
+                MemberNum = "111",
+                PhoneNum = "01091471986",
+                Height = 192,
+                Age = 30,
+                Gender = false
+            };
+
+            var res = repo.IsExistUser(user.MemberNum);
+            if (res)
+            {
+                MessageBox.Show("존재함");
+            }
         }
     }
 }

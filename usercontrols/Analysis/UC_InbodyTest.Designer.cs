@@ -47,6 +47,7 @@
             this.panel6 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel10 = new System.Windows.Forms.Panel();
             this.label2 = new System.Windows.Forms.Label();
@@ -163,7 +164,7 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.label21 = new System.Windows.Forms.Label();
             this.lbl_progPercent = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
+            this.timer_weight = new System.Windows.Forms.Timer(this.components);
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.pn_weight.SuspendLayout();
@@ -406,9 +407,19 @@
             this.panel5.Size = new System.Drawing.Size(250, 449);
             this.panel5.TabIndex = 22;
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(83, 168);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(104, 96);
+            this.button2.TabIndex = 1;
+            this.button2.Text = "button2";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(73, 13);
+            this.button1.Location = new System.Drawing.Point(83, 68);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(89, 94);
             this.button1.TabIndex = 0;
@@ -532,7 +543,7 @@
             this.pn_weight.Controls.Add(this.flowLayoutPanel2);
             this.pn_weight.Location = new System.Drawing.Point(358, 236);
             this.pn_weight.Name = "pn_weight";
-            this.pn_weight.Size = new System.Drawing.Size(250, 50);
+            this.pn_weight.Size = new System.Drawing.Size(240, 50);
             this.pn_weight.TabIndex = 26;
             // 
             // panel11
@@ -541,7 +552,7 @@
             this.panel11.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel11.Location = new System.Drawing.Point(0, 15);
             this.panel11.Name = "panel11";
-            this.panel11.Size = new System.Drawing.Size(246, 20);
+            this.panel11.Size = new System.Drawing.Size(236, 20);
             this.panel11.TabIndex = 29;
             // 
             // pn_weightProgress
@@ -551,7 +562,7 @@
             this.pn_weightProgress.Location = new System.Drawing.Point(0, 0);
             this.pn_weightProgress.MaximumSize = new System.Drawing.Size(246, 20);
             this.pn_weightProgress.Name = "pn_weightProgress";
-            this.pn_weightProgress.Size = new System.Drawing.Size(35, 20);
+            this.pn_weightProgress.Size = new System.Drawing.Size(20, 20);
             this.pn_weightProgress.TabIndex = 0;
             // 
             // panel61
@@ -559,7 +570,7 @@
             this.panel61.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel61.Location = new System.Drawing.Point(0, 10);
             this.panel61.Name = "panel61";
-            this.panel61.Size = new System.Drawing.Size(246, 5);
+            this.panel61.Size = new System.Drawing.Size(236, 5);
             this.panel61.TabIndex = 28;
             // 
             // flowLayoutPanel2
@@ -580,7 +591,7 @@
             this.flowLayoutPanel2.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel2.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel2.Name = "flowLayoutPanel2";
-            this.flowLayoutPanel2.Size = new System.Drawing.Size(246, 10);
+            this.flowLayoutPanel2.Size = new System.Drawing.Size(236, 10);
             this.flowLayoutPanel2.TabIndex = 27;
             // 
             // panel73
@@ -853,7 +864,7 @@
             this.pn_muscle.Controls.Add(this.flowLayoutPanel1);
             this.pn_muscle.Location = new System.Drawing.Point(358, 347);
             this.pn_muscle.Name = "pn_muscle";
-            this.pn_muscle.Size = new System.Drawing.Size(250, 50);
+            this.pn_muscle.Size = new System.Drawing.Size(240, 50);
             this.pn_muscle.TabIndex = 26;
             // 
             // panel13
@@ -862,7 +873,7 @@
             this.panel13.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel13.Location = new System.Drawing.Point(0, 15);
             this.panel13.Name = "panel13";
-            this.panel13.Size = new System.Drawing.Size(246, 20);
+            this.panel13.Size = new System.Drawing.Size(236, 20);
             this.panel13.TabIndex = 29;
             // 
             // pn_muscleProgress
@@ -879,7 +890,7 @@
             this.panel15.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel15.Location = new System.Drawing.Point(0, 10);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(246, 5);
+            this.panel15.Size = new System.Drawing.Size(236, 5);
             this.panel15.TabIndex = 28;
             // 
             // flowLayoutPanel1
@@ -900,7 +911,7 @@
             this.flowLayoutPanel1.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel1.Name = "flowLayoutPanel1";
-            this.flowLayoutPanel1.Size = new System.Drawing.Size(246, 10);
+            this.flowLayoutPanel1.Size = new System.Drawing.Size(236, 10);
             this.flowLayoutPanel1.TabIndex = 27;
             // 
             // panel16
@@ -1173,7 +1184,7 @@
             this.pn_fat.Controls.Add(this.flowLayoutPanel3);
             this.pn_fat.Location = new System.Drawing.Point(360, 458);
             this.pn_fat.Name = "pn_fat";
-            this.pn_fat.Size = new System.Drawing.Size(250, 50);
+            this.pn_fat.Size = new System.Drawing.Size(240, 50);
             this.pn_fat.TabIndex = 26;
             // 
             // panel41
@@ -1182,7 +1193,7 @@
             this.panel41.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel41.Location = new System.Drawing.Point(0, 15);
             this.panel41.Name = "panel41";
-            this.panel41.Size = new System.Drawing.Size(246, 20);
+            this.panel41.Size = new System.Drawing.Size(236, 20);
             this.panel41.TabIndex = 29;
             // 
             // pn_fatProgress
@@ -1199,7 +1210,7 @@
             this.panel43.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel43.Location = new System.Drawing.Point(0, 10);
             this.panel43.Name = "panel43";
-            this.panel43.Size = new System.Drawing.Size(246, 5);
+            this.panel43.Size = new System.Drawing.Size(236, 5);
             this.panel43.TabIndex = 28;
             // 
             // flowLayoutPanel3
@@ -1220,7 +1231,7 @@
             this.flowLayoutPanel3.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
             this.flowLayoutPanel3.Location = new System.Drawing.Point(0, 0);
             this.flowLayoutPanel3.Name = "flowLayoutPanel3";
-            this.flowLayoutPanel3.Size = new System.Drawing.Size(246, 10);
+            this.flowLayoutPanel3.Size = new System.Drawing.Size(236, 10);
             this.flowLayoutPanel3.TabIndex = 27;
             // 
             // panel44
@@ -1581,19 +1592,14 @@
             this.lbl_progPercent.ForeColor = System.Drawing.Color.Black;
             this.lbl_progPercent.Location = new System.Drawing.Point(183, 37);
             this.lbl_progPercent.Name = "lbl_progPercent";
-            this.lbl_progPercent.Size = new System.Drawing.Size(67, 35);
+            this.lbl_progPercent.Size = new System.Drawing.Size(34, 35);
             this.lbl_progPercent.TabIndex = 26;
-            this.lbl_progPercent.Text = "100";
+            this.lbl_progPercent.Text = "0";
             // 
-            // button2
+            // timer_weight
             // 
-            this.button2.Location = new System.Drawing.Point(83, 179);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(104, 96);
-            this.button2.TabIndex = 1;
-            this.button2.Text = "button2";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.timer_weight.Interval = 10;
+            this.timer_weight.Tick += new System.EventHandler(this.timer_weight_Tick);
             // 
             // UC_InbodyTest
             // 
@@ -1821,5 +1827,6 @@
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.Panel pn_printResult;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Timer timer_weight;
     }
 }

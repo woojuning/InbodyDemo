@@ -16,12 +16,12 @@ namespace Inbody.usercontrols.Analysis
     {
         public event EventHandler<EventWeightArgs> WeightEventHandler;
 
-        private AnalysisController _analysisController;
+        private AnalysisUseCase _analysisController;
 
         public UC_AnalysisWeight()
         {
             InitializeComponent();
-            _analysisController = new AnalysisController();
+            _analysisController = new AnalysisUseCase();
         }
 
         private void timer_weight_Tick(object sender, EventArgs e)

@@ -17,12 +17,16 @@ namespace Inbody.usercontrols.Analysis
     {
         private UserInfoModel _currentUser;
         private UserAnalysisModel _currentAnalysis;
-        private AnalysisController _analysisController;
+        private AnalysisUseCase _analysisController;
+
+        private double _weightPerWidth = 0;
+        private double _muscleMassPerWidth = 0;
+        private double _bodyFatPercentPerWidth = 0;
 
         public UC_InbodyTest(UserInfoModel userinfomodel, UserAnalysisModel userAnalysis)
         {
             InitializeComponent();
-            _analysisController = new AnalysisController();
+            _analysisController = new AnalysisUseCase();
             this._currentUser = userinfomodel;
             this._currentAnalysis = userAnalysis;
         }
@@ -50,6 +54,11 @@ namespace Inbody.usercontrols.Analysis
         private void btn_printInbody_Click(object sender, EventArgs e)
         {
             pn_printResult.Visible = true;
+
+            //db저장 로직
+            _analysisController.SaveUserAnalysis(_currentUser, _currentAnalysis);
+
+            pn_printResult.Visible = false;
         }
         #endregion
 
@@ -60,6 +69,12 @@ namespace Inbody.usercontrols.Analysis
             if (pn_weightProgress.Width < pn_weightProgress.MaximumSize.Width)
             {
                 pn_weightProgress.Width += 10;
+            }
+
+            if (int.Parse(lbl_progPercent.Text) < 100)
+            {
+                var percent = int.Parse(lbl_progPercent.Text);
+                lbl_progPercent.Text = (percent + 5).ToString();
             }
             
             if (pn_weightProgress.Width >= pn_weightProgress.MaximumSize.Width
@@ -74,6 +89,17 @@ namespace Inbody.usercontrols.Analysis
             // 골격근량
             // 체지방량
         }
+
+        private void timer_weight_Tick(object sender, EventArgs e)
+        {
+            if (pn_weightProgress.Width >= _currentAnalysis.Weight * _weightPerWidth)
+            {
+                timer_weight.Stop();
+                var percent = int.Parse(lbl_progPercent.Text);
+                lbl_progPercent.Text = (percent + 30).ToString();
+            }
+            pn_weightProgress.Width += 1; 
+        }
         #endregion
 
         #endregion
@@ -84,18 +110,77 @@ namespace Inbody.usercontrols.Analysis
             timer_inbody.Start();
         }
 
+        private async Task StartMuscleMassAnalysis()
+        {
+            _muscleMassPerWidth = _analysisController.GetMuscleMasstPerWidth(_currentUser, pn_muscle.Width / 12 * 4);
+            await Task.Run(async () => {
+                while (pn_muscleProgress.Width < _currentAnalysis.SkeletalMuscleMass * _muscleMassPerWidth)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        pn_muscleProgress.Width += 1;
+                    }));
+                    await Task.Delay(10);
+                }
+            });
+
+            var percent = int.Parse(lbl_progPercent.Text);
+            lbl_progPercent.Text = (percent + 35).ToString();
+        }
+
+        private async Task StartBodyFatPercentAnalysis()
+        {
+            _bodyFatPercentPerWidth = _analysisController.GetBodyFatPercentPerWidth(_currentUser, pn_muscle.Width / 12 * 4);
+            var userBodyFatPercent = _currentAnalysis.BodyFatMass / _currentAnalysis.Weight * 100;
+            await Task.Run(async () =>
+            {
+                while (pn_fatProgress.Width < userBodyFatPercent * _bodyFatPercentPerWidth)
+                {
+                    Invoke(new Action(() =>
+                    {
+                        pn_fatProgress.Width += 1;
+                    }));
+                    await Task.Delay(10);
+                }
+            });
+
+            var percent = int.Parse(lbl_progPercent.Text);
+            lbl_progPercent.Text = (percent + 35).ToString();
+        }
+
+        public async Task InbodyTestStart()
+        {
+            _weightPerWidth = _analysisController.GetWeightPerWidth(_currentUser, pn_weight.Width / 12 * 4);
+            timer_weight.Start();
+            await StartMuscleMassAnalysis();
+            await StartBodyFatPercentAnalysis();
+
+            //결과 버튼 Show
+            pn_resultContainer.Controls.Add(pn_result);
+            pn_result.Dock = DockStyle.Fill;
+            pn_result.Visible = true;
+            pn_result.BringToFront();
+        }
         #endregion
 
+
+        #region Test
         private void button1_Click(object sender, EventArgs e)
         {
-            pn_weightProgress.Width = 0;
-            timer_inbody.Start();
+            //pn_weightProgress.Width = 0;
+            //timer_inbody.Start();
+            Console.WriteLine(pn_weightProgress.Width);
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        private async void button2_Click(object sender, EventArgs e)
         {
-            var str = TCPIP_Client.GetDataFromServer("안녕하세요");
-            MessageBox.Show(str);
+            StartBodyFatPercentAnalysis();
         }
+        #endregion
+
+
+
+
+
     }
 }
