@@ -15,6 +15,8 @@ namespace Inbody.usercontrols
     public partial class UC_OverView : UserControl
     {
         private UC_EntryImage _ucEntryImage;
+        private UC_DashBoardMenu _ucDashBoard;
+        private UC_Login _ucLogin;
 
         private OverviewUseCase _overviewUseCase;
         
@@ -23,6 +25,9 @@ namespace Inbody.usercontrols
         {
             InitializeComponent();
             _overviewUseCase = new OverviewUseCase();
+            _ucLogin = new UC_Login();
+
+            RegisterEventHandler();
         }
 
         #region EventHandler
@@ -31,6 +36,7 @@ namespace Inbody.usercontrols
         private void UC_OverView_Load(object sender, EventArgs e)
         {
             _ucEntryImage = new UC_EntryImage();
+            _ucEntryImage.EntryImamgeDisposedEvent += EntryImageDisposedEvent;
             RegisterUserControl(pn_main, _ucEntryImage);
             ShowUserControl(_ucEntryImage);
             _ucEntryImage.StartLogicTimer();
@@ -39,31 +45,26 @@ namespace Inbody.usercontrols
         #endregion
 
         #region Button
-        private void btn_okay_Click(object sender, EventArgs e)
-        {
-            //db검증을 해야함
-            // 1) db서버에 해당 회원이 존재하면 로그인 성공 (다른 Main UserControl DashBoard를 띄우면됨)
-            // 2) 없으면 MessageBox를 통해서 회원이 없다고 표시한다. 
-            // 3) 측정을 하고 오라고 한다.
-            var isExist = _overviewUseCase.IsExistUser(tb_memberNum.Text);
-
-            if (isExist)
-            {
-                MessageBox.Show("로그인 성공!~");
-            }
-            else
-            {
-                MessageBox.Show("회원정보가 없습니다. 측정을 하고 오세요");
-            }
-
-        }
+      
         #endregion
 
         #region TextBox
-        private void tb_memberNum_TextChanged(object sender, EventArgs e)
+        #endregion
+
+        #region UserControlEvent
+        private void EntryImageDisposedEvent(object sender, EventArgs e)
         {
-            UpdateLabelMemberNumLength();
+            RegisterUserControl(pn_main, _ucLogin);
+            ShowUserControl(_ucLogin);
         }
+
+        private void LoginOkayButtonEvent(object sender, EventLoginArgs e)
+        {
+            _ucDashBoard = new UC_DashBoardMenu(e.MemberNum);
+            RegisterUserControl(pn_main, _ucDashBoard);
+            ShowUserControl(_ucDashBoard);
+        }
+
         #endregion
         #endregion
 
@@ -81,12 +82,13 @@ namespace Inbody.usercontrols
             usercontrol.BringToFront();
         }
 
-        #region TextBox
-        private void UpdateLabelMemberNumLength()
+        private void RegisterEventHandler()
         {
-            var numLength = tb_memberNum.Text.Length;
-            lbl_numberLength.Text = $"({numLength}/14)";
+            _ucLogin.LoginOkayButtonClickEvent += LoginOkayButtonEvent;
         }
+
+        #region TextBox
+       
         #endregion
 
         #endregion

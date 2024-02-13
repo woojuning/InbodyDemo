@@ -8,7 +8,7 @@ namespace Inbody.Models
 {
     public class UserAnalysisModel
     {
-        public int Id{ get; set; }  //아이디
+        public int AnalysisId{ get; set; }  //아이디
         public string MemberNum { get; set; }    //회원번호
         public double Weight { get; set; }  //몸무게
         public double SkeletalMuscleMass { get; set; }  //근육량

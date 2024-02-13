@@ -1,6 +1,6 @@
-﻿namespace Inbody.usercontrols
+﻿namespace Inbody.usercontrols.Overview
 {
-    partial class UC_OverView
+    partial class UC_DashBoardChange
     {
         /// <summary> 
         /// 필수 디자이너 변수입니다.
@@ -28,32 +28,33 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.pn_main = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // pn_main
+            // label1
             // 
-            this.pn_main.BackColor = System.Drawing.Color.White;
-            this.pn_main.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pn_main.Location = new System.Drawing.Point(0, 0);
-            this.pn_main.Name = "pn_main";
-            this.pn_main.Size = new System.Drawing.Size(888, 683);
-            this.pn_main.TabIndex = 0;
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Pretendard Medium", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.label1.Location = new System.Drawing.Point(206, 264);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 25);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "변화";
             // 
-            // UC_OverView
+            // UC_DashBoardChange
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.pn_main);
-            this.Name = "UC_OverView";
-            this.Size = new System.Drawing.Size(888, 683);
-            this.Load += new System.EventHandler(this.UC_OverView_Load);
+            this.Controls.Add(this.label1);
+            this.Name = "UC_DashBoardChange";
+            this.Size = new System.Drawing.Size(500, 553);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel pn_main;
+        private System.Windows.Forms.Label label1;
     }
 }

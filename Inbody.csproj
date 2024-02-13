@@ -118,11 +118,41 @@
     <Compile Include="usercontrols\Analysis\UC_PostureHand.Designer.cs">
       <DependentUpon>UC_PostureHand.cs</DependentUpon>
     </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoard.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoard.Designer.cs">
+      <DependentUpon>UC_DashBoard.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardChange.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardChange.Designer.cs">
+      <DependentUpon>UC_DashBoardChange.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardDetail.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardDetail.Designer.cs">
+      <DependentUpon>UC_DashBoardDetail.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardMenu.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_DashBoardMenu.Designer.cs">
+      <DependentUpon>UC_DashBoardMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="usercontrols\Overview\UC_EntryImage.cs">
       <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="usercontrols\Overview\UC_EntryImage.Designer.cs">
       <DependentUpon>UC_EntryImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_Login.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="usercontrols\Overview\UC_Login.Designer.cs">
+      <DependentUpon>UC_Login.cs</DependentUpon>
     </Compile>
     <Compile Include="usercontrols\UC_Analysis.cs">
       <SubType>UserControl</SubType>
@@ -163,6 +193,7 @@
     <Compile Include="Utils\DB\Connection.cs" />
     <Compile Include="Utils\ScreenEnum.cs" />
     <Compile Include="Utils\TCPIP_Client.cs" />
+    <Compile Include="Utils\UtilExt.cs" />
     <EmbeddedResource Include="InbodyMain.resx">
       <DependentUpon>InbodyMain.cs</DependentUpon>
     </EmbeddedResource>
@@ -203,8 +234,23 @@
     <EmbeddedResource Include="usercontrols\Analysis\UC_PostureHand.resx">
       <DependentUpon>UC_PostureHand.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Overview\UC_DashBoard.resx">
+      <DependentUpon>UC_DashBoard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Overview\UC_DashBoardChange.resx">
+      <DependentUpon>UC_DashBoardChange.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Overview\UC_DashBoardDetail.resx">
+      <DependentUpon>UC_DashBoardDetail.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Overview\UC_DashBoardMenu.resx">
+      <DependentUpon>UC_DashBoardMenu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="usercontrols\Overview\UC_EntryImage.resx">
       <DependentUpon>UC_EntryImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="usercontrols\Overview\UC_Login.resx">
+      <DependentUpon>UC_Login.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="usercontrols\UC_Analysis.resx">
       <DependentUpon>UC_Analysis.cs</DependentUpon>
@@ -281,6 +327,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\loading.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\InbodyLogoBlack.PNG" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

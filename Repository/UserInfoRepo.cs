@@ -11,6 +11,23 @@ namespace Inbody.Repository
 {
     public class UserInfoRepo
     {
+        public List<UserInfoModel> GetById(string memberNum, IDbTransaction transaction = null)
+        {
+            var query = $@"SELECT * FROM TB_UserInfo
+                               WHERE MemberNum = '{memberNum}'";
+            var list = new List<UserInfoModel>();
+
+            try
+            {
+                list = Connection.Query<UserInfoModel>(query, commandType: CommandType.Text);
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return list;
+        }
         public void Insert(UserInfoModel user, IDbTransaction transaction = null)
         {
             var query = $@"INSERT INTO TB_UserInfo

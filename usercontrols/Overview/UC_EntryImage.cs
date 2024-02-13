@@ -12,6 +12,8 @@ namespace Inbody.usercontrols.Overview
 {
     public partial class UC_EntryImage : UserControl
     {
+        public event EventHandler EntryImamgeDisposedEvent;
+
         private int _timerCount = 0;
         public UC_EntryImage()
         {
@@ -27,6 +29,7 @@ namespace Inbody.usercontrols.Overview
             if (_timerCount == 2)
             {
                 timer_entryimage.Stop();
+                EntryImamgeDisposedEvent?.Invoke(sender, e);
                 this.Dispose();
             }
         }
