@@ -41,7 +41,12 @@ namespace Inbody
 
             RegisterUserControlToPanel();
             Init_UserControlButton();
+
+            //이벤트 등록
+            _ucAnalysis.DisposeEvent += AnalysisRestartEvent;
         }
+
+
 
         #region EventHandler
         #region Load
@@ -71,6 +76,7 @@ namespace Inbody
 
         private void btn_analysis_Click(object sender, EventArgs e)
         {
+            
             _ucAnalysis.BringToFront();
         }
 
@@ -173,6 +179,20 @@ namespace Inbody
 
         #endregion
 
+        #region UserControl
+        private void AnalysisRestartEvent(object sender, EventArgs e)
+        {
+            if (_ucAnalysis.IsDisposed)
+            {
+                _ucAnalysis = new UC_Analysis();
+                _ucAnalysis.DisposeEvent += AnalysisRestartEvent;
+                pn_main.Controls.Add(_ucAnalysis);
+                _ucAnalysis.Dock = DockStyle.Fill;
+
+                _ucAnalysis.BringToFront();
+            }
+        }
+        #endregion
         #endregion
 
         #region Application Logic

@@ -30,3 +30,14 @@ C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.O
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Overview.UC_DashBoard.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Overview.UC_DashBoardChange.resources
 C:\Users\Administrator\Desktop\InbodyDemo\Inbody\obj\Debug\Inbody.usercontrols.Overview.UC_DashBoardDetail.resources
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Buffers.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Drawing.Common.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Memory.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Numerics.Vectors.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.ValueTuple.dll
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Buffers.xml
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Memory.xml
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Numerics.Vectors.xml
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+C:\Users\Administrator\Desktop\InbodyDemo\Inbody\bin\Debug\System.ValueTuple.xml

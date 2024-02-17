@@ -39,6 +39,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.timer_posture = new System.Windows.Forms.Timer(this.components);
+            this.btn_restart = new System.Windows.Forms.Button();
             this.pn_bottom.SuspendLayout();
             this.pn_main.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -48,6 +49,7 @@
             // 
             this.pn_bottom.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.pn_bottom.Controls.Add(this.btn_next);
+            this.pn_bottom.Controls.Add(this.btn_restart);
             this.pn_bottom.Controls.Add(this.btn_managerMenu);
             this.pn_bottom.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.pn_bottom.Location = new System.Drawing.Point(0, 629);
@@ -141,6 +143,20 @@
             this.timer_posture.Interval = 700;
             this.timer_posture.Tick += new System.EventHandler(this.timer_posture_Tick);
             // 
+            // btn_restart
+            // 
+            this.btn_restart.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(238)))), ((int)(((byte)(245)))), ((int)(((byte)(238)))));
+            this.btn_restart.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btn_restart.Font = new System.Drawing.Font("Pretendard Medium", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.btn_restart.ForeColor = System.Drawing.Color.Black;
+            this.btn_restart.Location = new System.Drawing.Point(179, 7);
+            this.btn_restart.Name = "btn_restart";
+            this.btn_restart.Size = new System.Drawing.Size(165, 37);
+            this.btn_restart.TabIndex = 0;
+            this.btn_restart.Text = "재측정";
+            this.btn_restart.UseVisualStyleBackColor = false;
+            this.btn_restart.Click += new System.EventHandler(this.btn_restart_Click);
+            // 
             // UC_Analysis
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
@@ -168,5 +184,6 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Panel pn_top;
         private System.Windows.Forms.Timer timer_posture;
+        private System.Windows.Forms.Button btn_restart;
     }
 }

@@ -39,11 +39,6 @@ namespace Inbody.usercontrols.Overview
             InitMenu();
         }
 
-
-
-
-
-
         #region EventHandler
         #region Load
         private void UC_DashBoard_Load(object sender, EventArgs e)
@@ -112,7 +107,7 @@ namespace Inbody.usercontrols.Overview
 
         private void InitUserControl()
         {
-            _ucDashBoard = new UC_DashBoard();
+            _ucDashBoard = new UC_DashBoard(_memberNum);
             UtilExt.RegisterUserControl(pn_main, _ucDashBoard);
 
             _ucDashBoardDetail = new UC_DashBoardDetail();

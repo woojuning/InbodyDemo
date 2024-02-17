@@ -16,6 +16,8 @@ namespace Inbody.usercontrols
 {
     public partial class UC_Analysis : UserControl
     {
+        public event EventHandler DisposeEvent;
+
         UC_AnalysisWeight _ucAnalysisWeight;
         UC_MemberNumber _ucMemberNumber;
         UC_CheckPersonalInfo _ucCheckPersonInfo;
@@ -84,6 +86,13 @@ namespace Inbody.usercontrols
                 default:
                     break;
             }
+        }
+
+        private void btn_restart_Click(object sender, EventArgs e)
+        {
+            //다시 측정하기 위해 새로운 화면이 나와야함..
+            this.Dispose();
+            DisposeEvent?.Invoke(sender, e);
         }
         #endregion
 
@@ -252,6 +261,8 @@ namespace Inbody.usercontrols
         {
 
         }
+
+
     }
 }
 
