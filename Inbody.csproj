@@ -218,6 +218,7 @@
       <DependentUpon>UC_Settings.cs</DependentUpon>
     </Compile>
     <Compile Include="Utils\DB\Connection.cs" />
+    <Compile Include="Utils\Pallete.cs" />
     <Compile Include="Utils\ScreenEnum.cs" />
     <Compile Include="Utils\TCPIP_Client.cs" />
     <Compile Include="Utils\UtilExt.cs" />

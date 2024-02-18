@@ -111,7 +111,11 @@ namespace Inbody.Controller
                 }
 
                 userAnalysis.MemberNum = user.MemberNum;
+
+                // 2024-02-18 DateTime으로 저장함.
                 userAnalysis.MeasureTime = DateTime.Now.ToString("yy-MM-dd HH:mm:ss");
+                //var now = DateTime.Now;
+                //userAnalysis.MeasureTime = new DateTime(now.Year, now.Month, now.Day, now.Hour, now.Minute, now.Second);
 
                 _userAnalysisRepo.Insert(userAnalysis);
             }

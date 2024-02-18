@@ -25,27 +25,27 @@ namespace Inbody.usercontrols
 
         private void button1_Click(object sender, EventArgs e)
         {
-            UserAnalysisRepo repo = new UserAnalysisRepo();
+            //UserAnalysisRepo repo = new UserAnalysisRepo();
 
-            var user = new UserInfoModel()
-            {
-                MemberNum = "111",
-                PhoneNum = "01089051985",
-                Height = 164,
-                Age = 29,
-                Gender = false
-            };
+            //var user = new UserInfoModel()
+            //{
+            //    MemberNum = "111",
+            //    PhoneNum = "01089051985",
+            //    Height = 164,
+            //    Age = 29,
+            //    Gender = false
+            //};
 
-            var analysis = new UserAnalysisModel()
-            {
-                MemberNum = user.MemberNum,
-                Weight = 92,
-                SkeletalMuscleMass = 42,
-                BodyFatMass = 25,
-                MeasureTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
-            };
+            //var analysis = new UserAnalysisModel()
+            //{
+            //    MemberNum = user.MemberNum,
+            //    Weight = 92,
+            //    SkeletalMuscleMass = 42,
+            //    BodyFatMass = 25,
+            //    MeasureTime = DateTime.Now.ToString("yyyy-MM-dd HH:mm:ss")
+            //};
 
-            repo.Insert(analysis);
+            //repo.Insert(analysis);
         }
 
         private void button2_Click(object sender, EventArgs e)

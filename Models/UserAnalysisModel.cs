@@ -14,5 +14,10 @@ namespace Inbody.Models
         public double SkeletalMuscleMass { get; set; }  //근육량
         public double BodyFatMass { get; set; } //체지방량
         public string MeasureTime { get; set; }   //측정 시간
+        public double MeasureTimeDouble { get; set; }
+        public UserAnalysisModel()
+        {
+                
+        }
     }
 }

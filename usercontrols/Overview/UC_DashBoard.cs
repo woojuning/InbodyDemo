@@ -1,5 +1,6 @@
 ﻿using Inbody.Controller;
 using Inbody.Models;
+using Inbody.Utils;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -17,15 +18,15 @@ namespace Inbody.usercontrols.Overview
 {
     public partial class UC_DashBoard : UserControl
     {
-        private VerticalLineAnnotation verticalLine;
-        private ToolTip tooltip;
-
         private string _memberNum;
+
         // dataCase 1 : 체중, 2 : 골격근량, 3: 체지방률
-        private int dataCase = 0;
+        private int dataCase = 1;
 
         private OverviewUseCase _overViewUseCase;
         private List<UserAnalysisModel> _userAnalysises;
+        //private DataPoint _selectedPoint;
+        private int _selectedPointIdx = -1;
 
 
         public UC_DashBoard(string memberNum)
@@ -41,10 +42,17 @@ namespace Inbody.usercontrols.Overview
         #region Load
         private void UC_DashBoard_Load(object sender, EventArgs e)
         {
-            _userAnalysises = _overViewUseCase.GetAnalysisById(_memberNum);
+            _userAnalysises = _overViewUseCase.GetAnalysisById(_memberNum).Reverse<UserAnalysisModel>().ToList();
+            // string형태의 날짜 포맷을 DateTime으로 변경 후 다시 double형으로 변경.
+            foreach (var item in _userAnalysises)
+            {
+                item.MeasureTimeDouble = DateTime.Parse(item.MeasureTime).ToOADate();
+            }
             InitChartData();
             InitChart();
+            ChangeAxisXLabel(dataCase);
         }
+
 
         #endregion
 
@@ -70,7 +78,11 @@ namespace Inbody.usercontrols.Overview
             ShowChartData(dataCase);
             ChangePanelBorder(dataCase);
             InitWeightChartAxisLabel(dataCase);
+            ClearSelectedDataPointLabel();
+            ChangeAxisXLabel(dataCase);
         }
+
+        
         #endregion
 
         #region Label
@@ -93,6 +105,9 @@ namespace Inbody.usercontrols.Overview
             ShowChartData(dataCase);
             ChangePanelBorder(dataCase);
             InitWeightChartAxisLabel(dataCase);
+            ClearSelectedDataPointLabel();
+            ChangeAxisXLabel(dataCase);
+
         }
 
         #endregion
@@ -109,39 +124,61 @@ namespace Inbody.usercontrols.Overview
             switch (dataCase)
             {
                 case 1:
-                    pn_weightBorder.BackColor = Color.Gray;
+                    pn_weightBorder.BackColor = Pallete.InbodyRed;
                     break;
                 case 2:
-                    pn_muscleBorder.BackColor = Color.Gray;
+                    pn_muscleBorder.BackColor = Pallete.InbodyRed;
                     break;
                 case 3:
-                    pn_bodyFatBorder.BackColor = Color.Gray;
+                    pn_bodyFatBorder.BackColor = Pallete.InbodyRed;
                     break;
                 default:
                     break;
             }
         }
+
         #region Chart
+        private void ChangeAxisXLabel(int dataCase)
+        {
+            var points = dataCase == 1 ? chart.Series["series_weight"].Points
+                                     : dataCase == 2 ? chart.Series["series_muscleMass"].Points
+                                     : chart.Series["series_bodyFat"].Points;
+
+            foreach (var point in points)
+            {
+                //point.AxisLabel = DateTime.FromOADate(point.XValue).ToString("yy.MM.dd hh:mm");
+                point.AxisLabel = _userAnalysises[int.Parse(point.XValue.ToString())].MeasureTime;
+            }
+        }
+
         private void InitChartData()
         {
-            var reversedUserAnalysis = _userAnalysises.Reverse<UserAnalysisModel>();
+            //var reversedUserAnalysis = _userAnalysises.Reverse<UserAnalysisModel>();
+
             // 몸무게
-            int cnt = 0;
-            foreach (var item in reversedUserAnalysis)
+            var cnt = 0;
+            foreach (var item in _userAnalysises)
             {
-                //chart.Series["series_weight"].Points.AddXY(item.MeasureTime, item.Weight);
                 chart.Series["series_weight"].Points.AddXY(cnt, item.Weight);
+                //chart.Series["series_weight"].Points.AddXY(item.MeasureTime, item.Weight);
+                //chart.Series["series_weight"].Points.AddXY(item.MeasureTimeDouble, item.Weight);
                 cnt++;
             }
             // 근육량
-            foreach (var item in reversedUserAnalysis)
+            cnt = 0;
+            foreach (var item in _userAnalysises)
             {
-                chart.Series["series_muscleMass"].Points.AddXY(item.MeasureTime, item.SkeletalMuscleMass);
+                chart.Series["series_muscleMass"].Points.AddXY(cnt, item.SkeletalMuscleMass);
+                //chart.Series["series_muscleMass"].Points.AddXY(item.MeasureTimeDouble, item.SkeletalMuscleMass);
+                cnt++;
             }
             // 체지방
-            foreach (var item in reversedUserAnalysis)
+            cnt = 0;
+            foreach (var item in _userAnalysises)
             {
-                chart.Series["series_bodyFat"].Points.AddXY(item.MeasureTime, item.BodyFatMass);
+                chart.Series["series_bodyFat"].Points.AddXY(cnt, item.BodyFatMass);
+                //chart.Series["series_bodyFat"].Points.AddXY(item.MeasureTimeDouble, item.BodyFatMass);
+                cnt++;
             }
 
             chart.Series["series_muscleMass"].Enabled = false;
@@ -169,7 +206,7 @@ namespace Inbody.usercontrols.Overview
             #endregion
 
             #region 클릭된 패널 보더색상
-            pn_weightBorder.BackColor = Color.Gray;
+            pn_weightBorder.BackColor = Pallete.InbodyRed;
             #endregion
         }
 
@@ -195,6 +232,27 @@ namespace Inbody.usercontrols.Overview
                     break;
                 default:
                     break;
+            }
+        }
+
+        //차트 전환 시 선택했던 데이터 label 초기화
+        private void ClearSelectedDataPointLabel()
+        {
+
+            if (_selectedPointIdx == -1)
+            {
+                lbl_measureTime.Text = "";
+                lbl_measureValue.Text = "";
+            }
+            else
+            {
+                var value = dataCase == 1 ? _userAnalysises[_selectedPointIdx].Weight
+                                               : dataCase == 2 ? _userAnalysises[_selectedPointIdx].SkeletalMuscleMass
+                                               : _userAnalysises[_selectedPointIdx].BodyFatMass;
+
+                lbl_measureTime.Text = _userAnalysises[_selectedPointIdx].MeasureTime;
+                lbl_measureValue.Text = dataCase == 3 ? $"{value.ToString()}%"
+                                                              : $"{value.ToString()}kg";
             }
         }
 
@@ -240,7 +298,7 @@ namespace Inbody.usercontrols.Overview
 
             foreach (var item in _userAnalysises.Reverse<UserAnalysisModel>())
             {
-                ser2.Points. AddXY(cnt,item.Weight);
+                ser2.Points.AddXY(cnt, item.Weight);
                 cnt++;
             }
 
@@ -248,14 +306,21 @@ namespace Inbody.usercontrols.Overview
             double maxYValue = _userAnalysises.Select(x => x.Weight).Max();
 
             chart.ChartAreas[0].AxisY.Minimum = minYValue - 3;
-            chart.ChartAreas[0].AxisY.Maximum = maxYValue+ 3;
+            chart.ChartAreas[0].AxisY.Maximum = maxYValue + 3;
             //chart1.ChartAreas[0].AxisY.Interval = 5;
             chart.ChartAreas[0].AxisY.LabelStyle.Interval = 3;
 
             chart.Series["line"].MarkerStyle = MarkerStyle.Circle;
             chart.Series["line"].MarkerSize = 10;
             chart.Series["line"].MarkerColor = Color.Red;
+            var date = DateTime.Now;
 
+            var translatedDate = date.ToOADate();
+
+            MessageBox.Show(translatedDate.ToString());
+
+            MessageBox.Show(DateTime.FromOADate(translatedDate).ToString());
+            chart.Series["series_weight"].Points[0].AxisLabel = "안녕하세요";
         }
         #endregion
 
@@ -290,13 +355,24 @@ namespace Inbody.usercontrols.Overview
 
         private void chart_MouseClick(object sender, MouseEventArgs e)
         {
+            //if (_graphics != null && _pen != null)
+            //{
+            //    _graphics.Dispose();
+            //    _pen.Dispose();
+            //    //_graphics = null;
+            //    //_pen = null;
+            //}
+
             int mouseX = e.X; // 마우스 클릭된 X 픽셀 좌표
             int mouseY = e.Y; // 마우스 클릭된 Y 픽셀 좌표
 
             DataPoint nearestDataPoint = null;
             double minDistance = double.MaxValue;
+            var points = dataCase == 1 ? chart.Series["series_weight"].Points
+                                            : dataCase == 2 ? chart.Series["series_muscleMass"].Points
+                                            : chart.Series["series_bodyFat"].Points;
 
-            foreach (DataPoint point in chart.Series[0].Points)
+            foreach (DataPoint point in points)
             {
                 // 데이터 포인트의 화면 픽셀 좌표 가져오기
                 int pointX = (int)chart.ChartAreas[0].AxisX.ValueToPixelPosition(point.XValue);
@@ -312,20 +388,61 @@ namespace Inbody.usercontrols.Overview
                 }
             }
 
+            // 현재 선택된 DataPoint의 index값을 필드변수 _selectedPointIdx 에 저장
+            _selectedPointIdx = int.Parse(nearestDataPoint.XValue.ToString());
+
             if (nearestDataPoint != null)
             {
-                // 가장 가까운 데이터 포인트의 값을 가져옵니다.
+                //// 가장 가까운 데이터 포인트의 값을 가져옵니다.
                 double xValue = nearestDataPoint.XValue;
                 double yValue = nearestDataPoint.YValues[0]; // 첫 번째 Y값 (단일 Series의 경우)
 
-                // 값을 출력하거나 사용합니다.
-                MessageBox.Show($"Nearest DataPoint - X: {xValue}, Y: {yValue}");
+                //// 값을 출력하거나 사용합니다.
+                ////MessageBox.Show($"Nearest DataPoint - X: {DateTime.FromOADate(xValue).ToString()}, Y: {yValue}");
+
+                //lbl_measureTime.Text = DateTime.FromOADate(xValue).ToString();
+                //lbl_measureValue.Text = dataCase == 3 ? $"{yValue.ToString()}%"
+                //                                              : $"{yValue.ToString()}kg";
+
+                lbl_measureTime.Text = _userAnalysises[int.Parse(xValue.ToString())].MeasureTime;
+                lbl_measureValue.Text = dataCase == 3 ? $"{yValue.ToString()}%"
+                                                              : $"{yValue.ToString()}kg";
+
+                //double xPoistion = chart.ChartAreas[0].AxisX.ValueToPosition(xValue);
+                //double xPoistion2 = chart.ChartAreas[0].AxisX.ValueToPixelPosition(xValue);
+                //int pointX2 = (int)chart.ChartAreas[0].AxisX.ValueToPixelPosition(xValue);
+
+                //chart.ChartAreas[0].CursorX.SetCursorPixelPosition(new Point(pointX2, 0), true);
+                //Console.WriteLine(chart.ChartAreas[0].CursorX.Position);
+                //Console.WriteLine(xPoistion);
+                //Console.WriteLine(xPoistion2);
+                //chart.ChartAreas[0].CursorX.Position = xPoistion;
+
             }
             else
             {
                 MessageBox.Show("No data point found near the click position.");
             }
 
+            ////여기서 vertical line그리기
+            //_selectedPoint = nearestDataPoint;
+            //Graphics graphics = chart.CreateGraphics();
+            //Pen pen = new Pen(Color.White);
+
+            ////Rectangle rect = chart.ClientRectangle;
+            ////_graphics.FillRectangle(new SolidBrush(chart.BackColor), rect);
+
+            //double xValue2 = nearestDataPoint.XValue;
+            //int pointX2 = (int)chart.ChartAreas[0].AxisX.ValueToPixelPosition(xValue2);
+
+            //int xAxisStartY = (int)chart.ChartAreas[0].AxisX.ValueToPixelPosition(chart.ChartAreas[0].AxisX.Minimum);
+            //int xAxisEndY = (int)chart.ChartAreas[0].AxisX.ValueToPixelPosition(chart.ChartAreas[0].AxisX.Maximum);
+
+
+            //graphics.DrawLine(pen, pointX2, xAxisStartY, pointX2, xAxisEndY);
+
+            //graphics.Dispose();
+            //pen.Dispose();
 
         }
 

@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series5 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Series series6 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.Title title2 = new System.Windows.Forms.DataVisualization.Charting.Title();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.Title title1 = new System.Windows.Forms.DataVisualization.Charting.Title();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             this.button1 = new System.Windows.Forms.Button();
@@ -60,6 +60,9 @@
             this.lbl_weightTop = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.chart = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel8 = new System.Windows.Forms.Panel();
+            this.lbl_measureTime = new System.Windows.Forms.Label();
+            this.lbl_measureValue = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel5.SuspendLayout();
@@ -78,13 +81,14 @@
             this.panel10.SuspendLayout();
             this.panel6.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.chart)).BeginInit();
+            this.panel8.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Pretendard Medium", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
-            this.label1.Location = new System.Drawing.Point(15, 33);
+            this.label1.Location = new System.Drawing.Point(15, 23);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(174, 29);
             this.label1.TabIndex = 2;
@@ -98,7 +102,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(10, 10);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(480, 73);
+            this.panel1.Size = new System.Drawing.Size(480, 62);
             this.panel1.TabIndex = 3;
             // 
             // button1
@@ -117,7 +121,7 @@
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel2.Location = new System.Drawing.Point(10, 83);
+            this.panel2.Location = new System.Drawing.Point(10, 72);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(480, 122);
             this.panel2.TabIndex = 4;
@@ -357,66 +361,94 @@
             // panel7
             // 
             this.panel7.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel7.Location = new System.Drawing.Point(10, 205);
+            this.panel7.Location = new System.Drawing.Point(10, 194);
             this.panel7.Name = "panel7";
             this.panel7.Size = new System.Drawing.Size(480, 16);
             this.panel7.TabIndex = 6;
             // 
             // chart
             // 
-            chartArea2.AxisX.IsReversed = true;
-            chartArea2.CursorX.IsUserEnabled = true;
-            chartArea2.CursorX.LineColor = System.Drawing.Color.LightGray;
-            chartArea2.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
-            chartArea2.CursorX.LineWidth = 2;
-            chartArea2.Name = "ChartArea1";
-            this.chart.ChartAreas.Add(chartArea2);
+            chartArea1.AxisX.IsReversed = true;
+            chartArea1.CursorX.IsUserEnabled = true;
+            chartArea1.CursorX.LineColor = System.Drawing.Color.LightGray;
+            chartArea1.CursorX.LineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Dash;
+            chartArea1.CursorX.LineWidth = 2;
+            chartArea1.Name = "ChartArea1";
+            this.chart.ChartAreas.Add(chartArea1);
             this.chart.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.chart.Location = new System.Drawing.Point(10, 221);
+            this.chart.Location = new System.Drawing.Point(10, 210);
             this.chart.Margin = new System.Windows.Forms.Padding(15);
             this.chart.Name = "chart";
-            series4.BorderWidth = 5;
-            series4.ChartArea = "ChartArea1";
-            series4.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series4.MarkerBorderColor = System.Drawing.Color.Red;
-            series4.MarkerColor = System.Drawing.Color.Red;
-            series4.MarkerSize = 8;
-            series4.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series4.Name = "series_weight";
-            series5.BorderWidth = 5;
-            series5.ChartArea = "ChartArea1";
-            series5.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series5.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            series5.MarkerBorderColor = System.Drawing.Color.Red;
-            series5.MarkerColor = System.Drawing.Color.Red;
-            series5.MarkerSize = 8;
-            series5.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series5.Name = "series_muscleMass";
-            series6.BorderWidth = 5;
-            series6.ChartArea = "ChartArea1";
-            series6.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
-            series6.Color = System.Drawing.Color.Silver;
-            series6.MarkerBorderColor = System.Drawing.Color.Red;
-            series6.MarkerColor = System.Drawing.Color.Red;
-            series6.MarkerSize = 8;
-            series6.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
-            series6.Name = "series_bodyFat";
-            this.chart.Series.Add(series4);
-            this.chart.Series.Add(series5);
-            this.chart.Series.Add(series6);
-            this.chart.Size = new System.Drawing.Size(480, 322);
+            series1.BorderWidth = 5;
+            series1.ChartArea = "ChartArea1";
+            series1.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series1.MarkerBorderColor = System.Drawing.Color.Red;
+            series1.MarkerColor = System.Drawing.Color.Red;
+            series1.MarkerSize = 8;
+            series1.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series1.Name = "series_weight";
+            series2.BorderWidth = 5;
+            series2.ChartArea = "ChartArea1";
+            series2.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+            series2.MarkerBorderColor = System.Drawing.Color.Red;
+            series2.MarkerColor = System.Drawing.Color.Red;
+            series2.MarkerSize = 8;
+            series2.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series2.Name = "series_muscleMass";
+            series3.BorderWidth = 5;
+            series3.ChartArea = "ChartArea1";
+            series3.ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Spline;
+            series3.Color = System.Drawing.Color.Silver;
+            series3.MarkerBorderColor = System.Drawing.Color.Red;
+            series3.MarkerColor = System.Drawing.Color.Red;
+            series3.MarkerSize = 8;
+            series3.MarkerStyle = System.Windows.Forms.DataVisualization.Charting.MarkerStyle.Circle;
+            series3.Name = "series_bodyFat";
+            this.chart.Series.Add(series1);
+            this.chart.Series.Add(series2);
+            this.chart.Series.Add(series3);
+            this.chart.Size = new System.Drawing.Size(480, 333);
             this.chart.TabIndex = 7;
             this.chart.Text = "chart1";
-            title2.Name = "Title1";
-            this.chart.Titles.Add(title2);
+            title1.Name = "Title1";
+            this.chart.Titles.Add(title1);
             this.chart.MouseClick += new System.Windows.Forms.MouseEventHandler(this.chart_MouseClick);
+            // 
+            // panel8
+            // 
+            this.panel8.Controls.Add(this.lbl_measureValue);
+            this.panel8.Controls.Add(this.lbl_measureTime);
+            this.panel8.Location = new System.Drawing.Point(170, 214);
+            this.panel8.Name = "panel8";
+            this.panel8.Size = new System.Drawing.Size(266, 36);
+            this.panel8.TabIndex = 8;
+            // 
+            // lbl_measureTime
+            // 
+            this.lbl_measureTime.AutoSize = true;
+            this.lbl_measureTime.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_measureTime.Location = new System.Drawing.Point(5, 9);
+            this.lbl_measureTime.Name = "lbl_measureTime";
+            this.lbl_measureTime.Size = new System.Drawing.Size(0, 19);
+            this.lbl_measureTime.TabIndex = 0;
+            // 
+            // lbl_measureValue
+            // 
+            this.lbl_measureValue.AutoSize = true;
+            this.lbl_measureValue.Font = new System.Drawing.Font("Pretendard", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(129)));
+            this.lbl_measureValue.Location = new System.Drawing.Point(197, 9);
+            this.lbl_measureValue.Name = "lbl_measureValue";
+            this.lbl_measureValue.Size = new System.Drawing.Size(0, 19);
+            this.lbl_measureValue.TabIndex = 0;
             // 
             // UC_DashBoard
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(248)))), ((int)(((byte)(248)))), ((int)(((byte)(248)))));
+            this.Controls.Add(this.panel8);
             this.Controls.Add(this.chart);
             this.Controls.Add(this.panel7);
             this.Controls.Add(this.panel2);
@@ -444,6 +476,8 @@
             this.panel10.ResumeLayout(false);
             this.panel6.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.chart)).EndInit();
+            this.panel8.ResumeLayout(false);
+            this.panel8.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -477,5 +511,8 @@
         private System.Windows.Forms.Label lbl_muscleMass;
         private System.Windows.Forms.Panel panel15;
         private System.Windows.Forms.Label lbl_muscleMassTop;
+        private System.Windows.Forms.Panel panel8;
+        private System.Windows.Forms.Label lbl_measureTime;
+        private System.Windows.Forms.Label lbl_measureValue;
     }
 }
