@@ -1,4 +1,5 @@
 # Inbody Demo Application
+<img src = "https://github.com/woojuning/InbodyDemo/assets/86952133/87cd947c-ec71-4388-a30e-ecb3bda3ef15" width = "80%" height = "80%">
 
 ## 사용 기술
 1. Visual Studio 2022
