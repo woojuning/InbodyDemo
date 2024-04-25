@@ -7,9 +7,9 @@
 2. 프로젝트 소개
 3. 구현 내용
 
-    3.1 Home
-    3.2 Analysis
-    3.3 DB
+    3.1 Home    
+    3.2 Analysis    
+    3.3 DB  
 
 
 ## 사용 기술
@@ -62,6 +62,9 @@
 - 추가 기술 예정
 
 ## DB
+MSSQL 사용  
+Dapper Lib 사용하여 Model에 맵핑하였습니다.
+- - -
 ![image](https://github.com/woojuning/InbodyDemo/assets/86952133/76130308-6768-4d3f-87cd-4c977e9431b1)
 
 - 1:M 관계를 활용하여 테이블 작성
