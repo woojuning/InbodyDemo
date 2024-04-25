@@ -1,6 +1,16 @@
 # Inbody Demo Application
 <img src = "https://github.com/woojuning/InbodyDemo/assets/86952133/87cd947c-ec71-4388-a30e-ecb3bda3ef15" width = "100%" height = "100%">
 
+# 목차
+
+1. 사용 기술
+2. 프로젝트 소개
+3. 구현 내용
+
+    3.1 Home
+    3.2 Analysis
+    3.3 DB
+
 
 ## 사용 기술
 1. Visual Studio 2022
@@ -50,3 +60,10 @@
 - 각 화면을 UserControl로 만들었다.
 - EventHandler를 활용하여 UserControl간 통신을 하였다.
 - 추가 기술 예정
+
+## DB
+![image](https://github.com/woojuning/InbodyDemo/assets/86952133/76130308-6768-4d3f-87cd-4c977e9431b1)
+
+- 1:M 관계를 활용하여 테이블 작성
+- TB_UserAnalysis의 FK가 MemberNum
+- 측정을 위해 회원번호를 입력하므로 고유한 값으로 설정했다.
