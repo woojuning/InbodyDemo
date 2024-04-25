@@ -1,9 +1,6 @@
 # Inbody Demo Application
-<img src = "https://github.com/woojuning/InbodyDemo/assets/86952133/87cd947c-ec71-4388-a30e-ecb3bda3ef15" width = "80%" height = "80%">
+<img src = "https://github.com/woojuning/InbodyDemo/assets/86952133/87cd947c-ec71-4388-a30e-ecb3bda3ef15" width = "100%" height = "100%">
 
-
-
-![Home](https://github.com/woojuning/InbodyDemo/assets/86952133/3cb9b514-2032-421c-8261-4a8d8e2ad798)
 
 ## 사용 기술
 1. Visual Studio 2022
@@ -24,8 +21,21 @@
     - 타이머를 활용해 애니메이션 UI를 구현했다.
     - 측정 완료 후 DB에 저장한다.
 
+## Menu Drawer
+ - 기술 예정
+
+
 ## Home
-<img src = "https://github.com/woojuning/InbodyDemo/assets/86952133/d2009f9e-be1f-4b02-8fa9-372e911666f2" width = "80%" height = "80%">
 
-- 기본 Chart Control을 활용해서 
+![Home3](https://github.com/woojuning/InbodyDemo/assets/86952133/83a113c3-a0fa-4698-b8f4-2560ac181a33)
 
+- 기본 Chart Control을 활용했다. 
+- Charat Control의 여러 Event를 활용해 구현했다.
+
+## Analysis
+
+![Analysis2](https://github.com/woojuning/InbodyDemo/assets/86952133/12851c38-7dcc-4433-843c-d7d631e9c612)
+
+- 각 화면을 UserControl로 만들었다.
+- EventHandler를 활용하여 UserControl간 통신을 하였다.
+- 
